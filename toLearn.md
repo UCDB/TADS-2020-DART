@@ -1,17 +1,17 @@
  #POO 
  
- class
- property
- method
- constructor
+ class X
+ property X
+ method X
+ constructor X
 
- inheritence
+ inheritence X 
  abstract
  interface
- generics
- polymorphism
+ generics X
+ polymorphism X
 
- collections (Set, Map, List)
+ collections (Set, Map, List X)
 
  # Lógica de Prog.
  
