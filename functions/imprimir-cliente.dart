@@ -1,4 +1,4 @@
-import 'cliente-pf.dart';
+import '../models/cliente-pf.dart';
 
 //Tipagem Fraca
 imprimirCliente(ClientePF cliente) {

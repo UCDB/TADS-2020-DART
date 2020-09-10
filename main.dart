@@ -1,10 +1,13 @@
-import 'cliente-crud.dart';
-import 'cliente-pf.dart';
-import 'cliente-pj.dart';
-import 'cliente.dart';
+import 'dart:ffi';
 
-import 'produto-crud.dart';
-import 'produtos.dart';
+import 'models/cliente-pf.dart';
+import 'models/cliente-pj.dart';
+import 'models/cliente.dart';
+
+import 'repositories/cliente-repository.dart';
+import 'repositories/repository-impl.dart';
+import 'repositories/repository.dart';
+import 'services/cliente-service.dart';
 
 main() {
   ClientePF cliPF = new ClientePF();
@@ -25,29 +28,13 @@ main() {
   // print(cliPF); //instance of 'ClientePF'
   // print(cliPJ); // instance of 'ClientePJ'
 
-  ClienteCRUD clientesCrud = ClienteCRUD();
-  clientesCrud.cadastrar(cliPF);
-  clientesCrud.cadastrar(
-      ClientePF.p("Virmerson", "Bento dos Santos", "111.111.111-11"));
-  clientesCrud.cadastrar(cliPJ);
-  clientesCrud.cadastrar(cli);
-  clientesCrud.cadastrar(cli2);
+  Repository<Cliente, Int64> repository = new ClienteRepository();
+  ClienteService clienteService = new ClienteService(repository);
+  clienteService.cadastrar(cliPF);
+  clienteService.cadastrar(cliPJ);
+  clienteService.cadastrar(cli);
 
-  clientesCrud.lista.forEach((element) {
+  clienteService.buscarTodos().forEach((element) {
     print(element);
-  });
-
-  ProdutoCRUD produtoCrud = ProdutoCRUD();
-  Produto computador = Produto();
-  computador.nome = "Computador";
-
-  Produto teclado = Produto();
-  teclado.nome = "Teclado";
-
-  produtoCrud.cadastrar(computador);
-  produtoCrud.cadastrar(teclado);
-
-  produtoCrud.lista.forEach((element) {
-    print(element.nome);
   });
 }
