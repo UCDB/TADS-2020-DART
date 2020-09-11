@@ -5,7 +5,7 @@ import 'models/cliente-pj.dart';
 import 'models/cliente.dart';
 
 import 'repositories/cliente-repository.dart';
-import 'repositories/repository-impl.dart';
+
 import 'repositories/repository.dart';
 import 'services/cliente-service.dart';
 
@@ -28,7 +28,9 @@ main() {
   // print(cliPF); //instance of 'ClientePF'
   // print(cliPJ); // instance of 'ClientePJ'
 
+//Dependencia
   Repository<Cliente, Int64> repository = new ClienteRepository();
+  //DI
   ClienteService clienteService = new ClienteService(repository);
   clienteService.cadastrar(cliPF);
   clienteService.cadastrar(cliPJ);

@@ -2,6 +2,9 @@
 
 class X
 property X
+
+properties visibility  
+
 method X
 constructor X
 
