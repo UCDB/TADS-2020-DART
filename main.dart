@@ -29,7 +29,7 @@ main() {
   // print(cliPJ); // instance of 'ClientePJ'
 
 //Dependencia
-  Repository<Cliente, Int64> repository = new ClienteRepository();
+  Repository<Cliente, int> repository = new ClienteRepository();
   //DI
   ClienteService clienteService = new ClienteService(repository);
   clienteService.cadastrar(cliPF);

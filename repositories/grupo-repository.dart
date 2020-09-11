@@ -3,4 +3,4 @@ import 'dart:ffi';
 import '../models/grupo.dart';
 import 'repository-impl.dart';
 
-class GrupoRepository extends RepositoryImpl<Grupo, Int64> {}
+class GrupoRepository extends RepositoryImpl<Grupo, int> {}

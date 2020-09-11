@@ -5,9 +5,9 @@ import '../models/cliente.dart';
 import '../repositories/repository.dart';
 
 class ClienteService {
-  Repository<Cliente, Int64> repository;
+  Repository<Cliente, int> repository;
 
-  ClienteService(Repository<Cliente, Int64> repository) {
+  ClienteService(Repository<Cliente, int> repository) {
     this.repository = repository;
   }
 

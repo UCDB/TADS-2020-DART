@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 class Cliente {
-  Int64 id;
+  int id;
   String nome;
 
   @override
