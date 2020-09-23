@@ -1,6 +1,7 @@
+import '../models/entity.dart';
 import 'repository.dart';
 
-class RepositoryMongoDBImpl<T, ID> implements Repository<T, ID> {
+class RepositoryMongoDBImpl<T extends Entity, ID> implements Repository<T, ID> {
   @override
   T alterar(T o) {
     // TODO: implement alterar

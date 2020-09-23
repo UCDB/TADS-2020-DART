@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'models/cliente-pf.dart';
 import 'models/cliente-pj.dart';
 import 'models/cliente.dart';
@@ -11,17 +9,22 @@ import 'services/cliente-service.dart';
 
 main() {
   ClientePF cliPF = new ClientePF();
+  cliPF.id = 100;
   cliPF.nome = "Jão";
   cliPF.sobreNome = "da Silva";
   cliPF.cpf = "999.999.999-99";
 
   ClientePJ cliPJ = new ClientePJ();
+  cliPJ.id = 101;
   cliPJ.nome = "UCDB";
   cliPJ.razaoSocial = "Universidade Católica Dom Bosco";
   cliPJ.cnpj = "11.111.111/1111-11";
 
-  Cliente cli = cliPF;
+  // Cliente cli = cliPF;
+  // cli.id = 102;
+
   Cliente cli2 = new Cliente();
+  cli2.id = 103;
   cli2.nome = "Carlos";
   // print(cli); //Jão da Silva 999.999.999-99
   // print(cli2); //instance of 'Cliente'
@@ -32,11 +35,13 @@ main() {
   Repository<Cliente, int> repository = new ClienteRepository();
   //DI
   ClienteService clienteService = new ClienteService(repository);
-  clienteService.cadastrar(cliPF);
-  clienteService.cadastrar(cliPJ);
-  clienteService.cadastrar(cli);
+  clienteService.cadastrar(cliPF); //0
+  clienteService.cadastrar(cliPJ); //1
+  clienteService.cadastrar(cli2); // 2
 
   clienteService.buscarTodos().forEach((element) {
     print(element);
   });
+
+  clienteService.alterar(cliPJ);
 }

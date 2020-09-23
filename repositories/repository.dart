@@ -1,7 +1,9 @@
+import '../models/entity.dart';
+
 /**
  * Interface Generica
  */
-class Repository<T, ID> {
+class Repository<T extends Entity, ID> {
   T cadastrar(T o) {
     return null;
   }

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import '../models/cliente.dart';
 
 import '../repositories/repository.dart';
@@ -19,5 +17,9 @@ class ClienteService {
 
   List<Cliente> buscarTodos() {
     return repository.buscarTodos();
+  }
+
+  Cliente alterar(Cliente cliente) {
+    return repository.alterar(cliente);
   }
 }

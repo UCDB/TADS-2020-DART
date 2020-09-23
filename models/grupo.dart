@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
-class Grupo {
-  int id;
+import 'entity.dart';
+
+class Grupo extends Entity {
   String descricao;
 }

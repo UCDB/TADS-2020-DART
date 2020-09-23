@@ -1,6 +1,7 @@
+import '../models/entity.dart';
 import 'repository.dart';
 
-class RepositoryImpl<T, ID> implements Repository<T, ID> {
+class RepositoryImpl<T extends Entity, ID> implements Repository<T, ID> {
   List<T> _lista = List<T>();
 
   List<T> get lista => _lista;
@@ -12,7 +13,15 @@ class RepositoryImpl<T, ID> implements Repository<T, ID> {
 
   @override
   T alterar(T o) {
-    throw UnimplementedError();
+    print(o.id);
+    //Verificar se existe na lista
+    // _lista.forEach((element, index) {
+    //   if (element.id == o.id)
+    //    {return index}
+    // });
+
+    //print("indice do cliente  ${index} ");
+    return o;
   }
 
   @override

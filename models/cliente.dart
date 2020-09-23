@@ -1,11 +1,17 @@
-import 'dart:ffi';
+import 'entity.dart';
 
-class Cliente {
-  int id;
-  String nome;
+class Cliente extends Entity {
+  String _nome;
+  set nome(String nome) {
+    this._nome = nome;
+  }
+
+  get nome {
+    return _nome;
+  }
 
   @override
   String toString() {
-    return nome;
+    return _nome;
   }
 }
