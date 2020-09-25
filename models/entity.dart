@@ -1,3 +1,3 @@
-class Entity {
-  int id;
+class Entity<ID> {
+  ID id;
 }

@@ -1,6 +1,6 @@
 import 'entity.dart';
 
-class Cliente extends Entity {
+class Cliente extends Entity<int> {
   String _nome;
   set nome(String nome) {
     this._nome = nome;

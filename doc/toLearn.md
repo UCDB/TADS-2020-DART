@@ -3,7 +3,7 @@
 class X
 property X
 
-properties visibility   ??
+properties visibility   X
 
 
 Async await 

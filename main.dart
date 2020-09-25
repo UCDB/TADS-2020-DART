@@ -39,9 +39,17 @@ main() {
   clienteService.cadastrar(cliPJ); //1
   clienteService.cadastrar(cli2); // 2
 
+  print("-------------");
   clienteService.buscarTodos().forEach((element) {
     print(element);
   });
 
-  clienteService.alterar(cliPJ);
+  cliPF.nome = "Nome Alterado!";
+  ClientePF cliPFAlterado = clienteService.alterar(cliPF);
+  //print("Cli Alterado:" + cliPFAlterado.toString());
+
+  print("----Despois Alteracao-----");
+  clienteService.buscarTodos().forEach((element) {
+    print(element);
+  });
 }

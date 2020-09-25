@@ -15,10 +15,9 @@ class RepositoryImpl<T extends Entity, ID> implements Repository<T, ID> {
   T alterar(T o) {
     print(o.id);
     //Verificar se existe na lista
-    // _lista.forEach((element, index) {
-    //   if (element.id == o.id)
-    //    {return index}
-    // });
+    int index = _lista.indexWhere((element) => element.id == o.id);
+
+    _lista.setAll(index, [o]);
 
     //print("indice do cliente  ${index} ");
     return o;
