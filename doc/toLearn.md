@@ -3,13 +3,12 @@
 class X
 property X
 
-properties visibility   X
+properties visibility X
 
-
-Async await 
+Async await , FUTURE ???
 https://dart.dev/guides/language/language-tour#asynchrony-support
 
-Teste unitario
+Teste unitario X
 
 method X
 constructor X
@@ -20,12 +19,12 @@ interface X
 generics X
 polymorphism X
 
-collections (Set, Map, List X) - ??? 
+collections (Set, Map, List X) - ???
+
+#Error hanbler (Try Catch) X
+
+# Test Exception ???
 
 # Lógica de Prog.
 
-#Error hanbler (Try Catch)  -???
-
 Recursividade
-
-

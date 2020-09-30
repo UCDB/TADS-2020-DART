@@ -2,6 +2,8 @@ import '../models/cliente.dart';
 
 import '../repositories/repository.dart';
 
+import '../exceptions/ServiceException.dart';
+
 class ClienteService {
   Repository<Cliente, int> repository;
 
@@ -9,10 +11,11 @@ class ClienteService {
     this.repository = repository;
   }
 
-  cadastrar(Cliente cliente) {
-    if (cliente.nome.length > 100) throw ("Cliente com nome muito grande");
-
-    repository.cadastrar(cliente);
+  Cliente cadastrar(Cliente cliente) {
+    if (cliente.nome.length > 20) {
+      throw ServiceException('Cliente com nome > 20 caracteres');
+    }
+    return repository.cadastrar(cliente);
   }
 
   List<Cliente> buscarTodos() {

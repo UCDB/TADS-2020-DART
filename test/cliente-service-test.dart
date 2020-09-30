@@ -5,6 +5,7 @@ import '../models/cliente.dart';
 import '../repositories/cliente-repository.dart';
 import '../repositories/repository.dart';
 import '../services/cliente-service.dart';
+import '../exceptions/ServiceException.dart';
 
 void main() {
   test('Deve Cadastrar ClientePF', () {
@@ -44,5 +45,26 @@ void main() {
 
     ClientePF objAlterado = clienteService.alterar(cliPF);
     expect(objAlterado.nome, 'Zé');
+  });
+
+  test('Deve Lançar Exception ao Cadastrar Cliente', () {
+    //mock
+    var cliPF = ClientePF();
+    cliPF.id = 100;
+    cliPF.nome = 'Jão';
+    cliPF.sobreNome = 'da Silva';
+    cliPF.cpf = '999.999.999-99';
+
+    //Dependencia
+    Repository<Cliente, int> repository = ClienteRepository();
+    //DI
+    var clienteService = ClienteService(repository);
+    try {
+      clienteService.cadastrar(cliPF);
+      assert(false, 'Exception nao lancada');
+    } on ServiceException {
+      assert(true, 'Sucesso no lancamento da exception');
+    }
+    //expect(() => clienteService.cadastrar(cliPF), Exception);
   });
 }
