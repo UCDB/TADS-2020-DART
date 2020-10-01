@@ -10,6 +10,18 @@ import '../services/cliente-service.dart';
 import '../exceptions/ServiceException.dart';
 
 void main() {
+  test('Buscar todos no banco com Future', () async {
+//Dependencia
+    Repository<Cliente, int> repository = ClienteRepository();
+    //DI
+    var clienteService = ClienteService(repository);
+
+    var buscarTodosBanco = await clienteService.buscarTodosBanco();
+
+    expect(buscarTodosBanco, []);
+    //expect(buscarTodosBanco , );
+  });
+
   test('Deve Cadastrar ClientePF sem Exception', () {
     //mock
     var cliPF = ClientePF();

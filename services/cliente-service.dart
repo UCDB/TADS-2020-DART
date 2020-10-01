@@ -25,4 +25,9 @@ class ClienteService {
   Cliente alterar(Cliente cliente) {
     return repository.alterar(cliente);
   }
+
+  Future<List<Cliente>> buscarTodosBanco() {
+    return Future.delayed(
+        Duration(seconds: 10), () => repository.buscarTodos());
+  }
 }
