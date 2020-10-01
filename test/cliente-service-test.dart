@@ -98,4 +98,7 @@ void main() {
     expect(() => clienteService.cadastrar(cliPF),
         throwsA(TypeMatcher<ServiceException>()));
   });
+  //OBS: Deve implementar o Cliente Service e o RepositoryImpl
+  test('Deve Excluir', () => {});
+  test('Deve Buscar Por Id', () => {});
 }
